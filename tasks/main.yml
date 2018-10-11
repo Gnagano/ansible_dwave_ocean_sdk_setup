@@ -16,9 +16,6 @@
     repo: "{{ leap_dwave_ocean_sdk_repository }}"
     dest: /tmp/dwave-ocean-sdk
   when: dwave_ocean_sdk_git_path.stat.exists == false
-#
-# - debug:
-#     msg: "{{ dwave_ocean_sdk_git_path.stat.path }}"
 
 - name: python setup.py
   shell: "python setup.py install"

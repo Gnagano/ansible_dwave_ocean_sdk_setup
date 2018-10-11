@@ -1,21 +1,15 @@
 ---
 galaxy_info:
   author: gano
-  description: python install with pyenv
+  description: install ocean sotfware
   license: MIT
   min_ansible_version: 2.0
   platforms:
-    - name: EL
-      versions:
-        - 6
     - name: Ubuntu
       versions:
         - xenial # 16.04
   galaxy_tags:
-    - centos
     - ubuntu
-    - anyenv
-    - pyenv
+    - ocean
 
-#dependencies: [ gano2018.ansible_anyenv ]
-dependencies: []
+dependencies: [ gano2018.ansible_git ]
