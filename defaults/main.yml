@@ -1,2 +1,2 @@
-leap_required_packages:
-  - dwave-ocean-sdk
+leap_dwave_ocean_sdk_repository:
+  https://github.com/dwavesystems/dwave-ocean-sdk.git
