@@ -1,27 +1,27 @@
-# Ansible Role: Install python by pyenv
+# Ansible Role: Install Ocean Software
 
-Ansible Role: Install python by pyenv
+Ansible Role: Install Ocean Software
 
-## Dependencies
+## Requirements
 
-Before execute thie playbook, you should execute the playbooks below.
+- OS: Ubuntu16.04
 
-- [gano2018.ansible_anyenv](https://github.com/gano2018/ansible_anyenv)
+- git is installed
 
-## Role Variables
+- python version >= 2.7
 
-- python_pyenv_install_dir (defined at `defaults/main.yml`)
+## What happen when the role is executed
 
-  The variable `python_pyenv_install_dir` is where pyenv is installed.
-  The default value is `/opt/anyenv/envs/pyenv`.
+1. install dwave-ocean-sdk
 
-  The variable is define as `{{ anyenv_root | default '/opt/anyenv'}}//envs/pyenv`, so you only define `anyenv_root` if you want to change the default value.
+```
+pip install dwave-ocean-sdk
+```
 
-- python_version (defined at `defaults/main.yml`)
+2. clone the dwave-ocean-sdk
 
-  The variable `python_version` is the version you want to install.
-  The default value is `2.7.15`. If you do not define, version `2.7.15` will be installed.
-
-- python_required_libraries (defined at `vars/*.yml`)
-
-  The libraries required to install python. The values are change by os type.
+```
+git clone https://github.com/dwavesystem/dwave-ocean-sdk.git /tmp/
+cd /tmp/dwave-ocean-sdk
+python setup.py install
+```
